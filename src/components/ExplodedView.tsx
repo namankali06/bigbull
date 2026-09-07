@@ -39,9 +39,13 @@ export function ExplodedView() {
   const controllerX = useTransform(controllerXY, [0, 1], [0, 60]);
 
   return (
-    <section ref={sectionRef} id="engineering" className="relative bg-ink-soft" style={{ height: "420vh" }}>
-      <div className="sticky top-0 h-[100svh] overflow-hidden">
-        <div className="max-w-7xl mx-auto h-full px-6 md:px-10 grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-8">
+    <section
+      ref={sectionRef}
+      id="engineering"
+      className="relative bg-ink-soft h-auto lg:h-[420vh]"
+    >
+      <div className="lg:sticky lg:top-0 h-auto lg:h-[100svh] overflow-visible lg:overflow-hidden py-20 lg:py-0">
+        <div className="max-w-7xl mx-auto h-auto lg:h-full px-6 md:px-10 grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-8">
           {/* SVG schematic */}
           <motion.div style={{ opacity: diagramOpacity }} className="relative h-[52vh] lg:h-[70vh] order-2 lg:order-1">
             <svg viewBox="0 0 800 520" className="w-full h-full" fill="none">
@@ -144,9 +148,8 @@ export function ExplodedView() {
                     </span>
                     <div>
                       <h3
-                        className={`font-display font-semibold text-base md:text-lg ${
-                          active ? "text-paper" : "text-paper/70"
-                        }`}
+                        className={`font-display font-semibold text-base md:text-lg ${active ? "text-paper" : "text-paper/70"
+                          }`}
                       >
                         {c.label}
                       </h3>
@@ -169,7 +172,7 @@ export function ExplodedView() {
 
         <motion.div
           style={{ opacity: outroOpacity }}
-          className="pointer-events-none absolute inset-0 grid place-items-center bg-ink-soft"
+          className="pointer-events-none absolute inset-0 hidden lg:grid place-items-center bg-ink-soft"
         >
           <h2 className="font-display font-bold text-4xl md:text-7xl text-paper text-center px-6">
             Every part has a purpose.
